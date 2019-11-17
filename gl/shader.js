@@ -1,25 +1,25 @@
-const SHADER_ELEMENT_NONE = 0;
-const SHADER_ELEMENT_VERTEX = 1;
-const SHADER_ELEMENT_FRAGMENT = 2;
+SGR_SHADER_ELEMENT_NONE = 0;
+SGR_SHADER_ELEMENT_VERTEX = 1;
+SGR_SHADER_ELEMENT_FRAGMENT = 2;
 
-function createShaderElement(type, code) {
+function SGR_createShaderElement(type, code) {
 	const self = {};
 	
-	self.ID = gl.createShader((type == SHADER_ELEMENT_VERTEX ? gl.VERTEX_SHADER : gl.FRAGMENT_SHADER));
+	self.ID = gl.createShader((type == SGR_SHADER_ELEMENT_VERTEX ? gl.VERTEX_SHADER : gl.FRAGMENT_SHADER));
   	gl.shaderSource(self.ID, code); 
   	gl.compileShader(self.ID);
 
 	let compiled = gl.getShaderParameter(self.ID, gl.COMPILE_STATUS);
-	console.log((type == SHADER_ELEMENT_VERTEX ? "Vertex" : "Fragment") + " Shader Element compiled successfully: " + compiled);
+	console.log((type == SGR_SHADER_ELEMENT_VERTEX ? "Vertex" : "Fragment") + " Shader Element compiled successfully: " + compiled);
 	if(!compiled) {
 		let compilationLog = gl.getShaderInfoLog(self.ID);
-		console.warn((type == SHADER_ELEMENT_VERTEX ? "Vertex" : "Fragment") + " Shader compiler log: " + compilationLog);
+		console.warn((type == SGR_SHADER_ELEMENT_VERTEX ? "Vertex" : "Fragment") + " Shader compiler log: " + compilationLog);
 	}
 
 	return self;
 }
 
-function createShader() {
+function SGR_createShader() {
 	const self = {};
 
 	self.ID = gl.createProgram();

@@ -1,0 +1,15 @@
+body {
+	background-color: lightblue;
+}
+div#title {
+	color: gray;
+	text-align: center;
+}
+div#glCanvas {
+	position: relative;
+	width: 640px;
+	height: 360px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, 0%);
+}

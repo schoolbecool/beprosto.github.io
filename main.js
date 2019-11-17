@@ -35,12 +35,12 @@ function main() {
   "}";
 
   /* Creating, binding and initializing a vertex buffer with data */
-  vertexBuffer = createVertexBuffer().sendData(vertices);
+  vertexBuffer = SGR_createVertexBuffer().sendData(vertices);
 
   /* Creating and compiling shaders */
-  shader = createShader()
-            .attachElement(createShaderElement(SHADER_ELEMENT_VERTEX, vertexShaderSource))
-            .attachElement(createShaderElement(SHADER_ELEMENT_FRAGMENT, fragmentShaderSource))
+  shader = SGR_createShader()
+            .attachElement(SGR_createShaderElement(SGR_SHADER_ELEMENT_VERTEX, vertexShaderSource))
+            .attachElement(SGR_createShaderElement(SGR_SHADER_ELEMENT_FRAGMENT, fragmentShaderSource))
             .compile();
 
   // Point an attribute to the currently bound VBO
@@ -51,16 +51,16 @@ function main() {
   gl.enableVertexAttribArray(1);
 
   /* Clearing the canvas with color black. */ 
-  renderer.clear(Math.cos(theta), Math.sin(theta), Math.tan(theta), 1.0);
+  SGR_clear(Math.cos(theta), Math.sin(theta), Math.tan(theta), 1.0);
   /* Drawing the bound data */
-  renderer.draw(3);
+  SGR_draw(3);
 }
 
 function updateButtonFunction() {
   /* Clearing the canvas with different colors depending on the global variable */
-  renderer.clear(Math.cos(theta), Math.sin(theta), Math.tan(theta), 1.0);
+  SGR_clear(Math.cos(theta), Math.sin(theta), Math.tan(theta), 1.0);
   /* Drawing the bound data */
-  renderer.draw(3);
+  SGR_draw(3);
 
   /* Modifying the global variable */
   theta += 0.1;

@@ -4,6 +4,8 @@
     <head>
         <title>WebGL Example</title>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="main.css">
+
         <script src="gl/renderer.js"></script>
         <script src="gl/vertexBuffer.js"></script>
         <script src="gl/shader.js"></script>
@@ -16,7 +18,8 @@
     		<button id="updateButton" onclick="updateButtonFunction()">update</button>
     	</div>
     	<br/>
-        <canvas id="myCanvas" width="640" height="360"></canvas>
-        
+    	<div id="glCanvas" class="center">
+        	<canvas id="myCanvas" width="640" height="360"></canvas>
+    	</div>
     </body>
 </html>

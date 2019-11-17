@@ -1,4 +1,4 @@
-function createVertexBuffer() {
+function SGR_createVertexBuffer() {
   const self = {};
 
   self.ID = gl.createBuffer();
